@@ -1,0 +1,80 @@
+ 
+<div class="relative flex items-center justify-center h-auto ">
+    
+    <div class="max-w-3xl w-full p-8 bg-gray-100 dark:bg-gray-700 dark:text-white shadow-xl h-full">
+     
+ 
+      <div class=" flex flex-col sm:fex-col gap-4 mt-4">
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+     
+           
+
+          <div class="flex flex-col w-full">
+            <label for="name" class="block text-sm font-medium text-gray-700">Name:</label>
+            <input 
+            type="text" 
+            formControlName="name" 
+            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+            >
+            <span class="validation" *ngIf="submitted && f['name'].errors">
+              <span class="validation" *ngIf="f['name'].errors['required']">Name is invalid</span>
+            </span>
+          </div>
+  
+          <br />
+
+          <div class="flex flex-col w-full">
+            <label for="price" class="block text-sm font-medium text-gray-700">Price:</label>
+            <input 
+            type="number" 
+            formControlName="price" 
+            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            [ngClass]="{ 'is-invalid': submitted && f['price'].errors }"
+            >
+            <span class="validation" *ngIf="submitted && f['price'].errors">
+              <span class="validation" *ngIf="f['price'].errors['required']">Price is invalid</span>
+            </span>
+          </div>
+  
+          <br />
+
+          <div class="flex flex-col w-full">
+            <label for="description" class="block text-sm font-medium text-gray-700">Description:</label>
+            <input 
+            type="text" 
+            formControlName="description" 
+            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+            [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"
+            >
+            <span class="validation" *ngIf="submitted && f['description'].errors">
+              <span class="validation" *ngIf="f['description'].errors['required']">Description is invalid</span>
+            </span>
+          </div>
+  
+          <br />
+ 
+  
+       
+     
+          <button type="submit" class="p-4 mb-4 text-white bg-picton-blue" style="float: right;">{{heading}}</button>
+          
+  
+        </form>
+  
+
+      
+    </div>
+
+
+
+
+   
+        
+        <!-- <br />
+        <button class="p-4 mb-4 text-white bg-picton-blue" style="float: right;">Creating</button>
+      -->
+     
+    </div>
+  </div>
